@@ -1,9 +1,18 @@
 # Spacetime
 
 Spacetime is a simple utility class which aims to simplify dealing with timezones
-in Apex. To do this, it stores Date and Time values separately, along with a
-Timezone. Datetime values are then calculated based on the timezone offset for
-the Date.
+in Apex.
+
+## Background
+
+Dates and Times are easy to work with. When you try combining the two, such as in
+a Datetime, things get more complicated. A Datetime either uses the context of the user
+setting the value to convert from the user's timezone to gmt, or requires the user to
+explicitly set a gmt value.
+
+Spacetime solves this problem by keeping the date and time separate and requiring an
+explicit timezone to use. Then, when necessary, it handles the conversion to/from a
+datetime value.
 
 An instance of Spacetime is by design immutable since any change would make it
 in fact a different Spacetime. All _setter_ methods thus return a new instance.
