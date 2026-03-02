@@ -11,7 +11,7 @@ public class Spacetime implements Comparable {
 
 	private Date d;
 	private Time t;
-	private final TimeZone tz;
+	private TimeZone tz;
 
 	private SpaceTime(TimeZone timezoneValue, Date dateValue, Time timeValue) {
 		if (timezoneValue == null)
